@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fucked Again - DasEnde</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Prevent back navigation
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+
+        // Disable right-click and dev tools
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
+        document.onkeydown = function (e) {
+            if (e.ctrlKey && (e.key === 'I' || e.key === 'i' || e.shiftKey && e.key === 'C' || e.key === 'c')) {
+                e.preventDefault();
+            }
+            if (e.key === 'F12') {
+                return false;
+            }
+        };
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: 'Arial', sans-serif;
+            background-color: black; /* Set background to black */
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        p {
+            font-size: 2em;
+            letter-spacing: 1.5px;
+        }
+
+        /* Fullscreen video background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;  /* Ensures the video is not cropped */
+            pointer-events: none; /* Disable video controls */
+        }
+
+        /* Top-center image */
+        .top-center-image {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .top-center-image img {
+            width: 150px; /* Adjust the size as needed */
+            height: auto;
+            animation: moveLeftRight 5s ease-in-out infinite alternate;
+        }
+
+        /* Image movement animation */
+        @keyframes moveLeftRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>مارس الجنس مرة أخرى ، لا يمكنك فعل القرف ولن تجدني أبدًا</p>
+
+    <!-- Fullscreen video background -->
+    <div class="video-background">
+        <video autoplay muted loop class="background-video">
+            <source src="pics and videos/IMG_4168.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Autoplay background audio -->
+    <audio autoplay loop id="bg-music">
+        <source src="pics and videos/IMG_4168.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Moving Image in top center -->
+    <main>
+        <div class="top-center-image">
+            <img src="pics and videos/1vz5n9ltopy51.png" alt="Moving Image">
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 DasEnde</p>
+    </footer>
+</body>
+</html>
